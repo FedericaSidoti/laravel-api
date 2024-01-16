@@ -8,6 +8,7 @@ use App\Models\Project;
 use App\Models\Technology;
 use Illuminate\Validation\Rule;
 use App\Models\Type;
+use Illuminate\Support\Str;
 
 class ProjectController extends Controller
 {
@@ -36,12 +37,14 @@ class ProjectController extends Controller
     {
         $data = $request->all();
 
+        $data['slug'] = Str::slug($data['title'], '-');
+
         $request->validate([
             'title' => 'required|max:255|',
             'thumb' => 'required|url',
             'description' => 'required',
             'type_id' => 'nullable|exists:types,id',
-            'technology_id' => 'nullable|exists:technologies,id'
+            'technology_id' => 'nullable|exists:technologies,id',
         ]);
 
         $newProject = Project::create($data);
@@ -66,13 +69,17 @@ class ProjectController extends Controller
     {
         $data = $request->all();
 
+        $data['slug'] = Str::slug($data['title'], '-');
+
         $request->validate([
             'title' => 'required|max:255|',
             'thumb' => 'required|url',
             'description' => 'required',
             'type_id' => 'nullable|exists:types,id',
-            'technology_id' => 'nullable|exists:technologies,id'
+            'technology_id' => 'nullable|exists:technologies,id',
         ]);
+
+        
 
         $project->update($data);
 

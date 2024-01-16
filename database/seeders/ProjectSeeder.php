@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 use App\Models\Project;
 use App\Models\Technology;
 use App\Models\Type;
+use Illuminate\Support\Str;
 
 class ProjectSeeder extends Seeder
 {
@@ -46,6 +47,7 @@ class ProjectSeeder extends Seeder
             $newProject->title = $project['title'];
             $newProject->thumb = $project['thumb'];
             $newProject->description = $project['description'];
+            $newProject->slug = Str::slug($project['title']);
             $newProject->type_id= $ids->random();
             
             $newProject->save();
