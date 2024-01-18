@@ -19,39 +19,32 @@ class ProjectSeeder extends Seeder
         $projects = [
             [
                 'title'=> 'Boolando',
-                'thumb'=> 'https://imageio.forbes.com/blogs-images/forbestechcouncil/files/2019/01/canva-photo-editor-8-7.jpg?height=640&width=640&fit=bounds',
                 'description' => 'Lorem Ipsum'
             ],
 
             [
                 'title'=> 'Boolzapp',
-                'thumb'=> 'https://imageio.forbes.com/blogs-images/forbestechcouncil/files/2019/01/canva-photo-editor-8-7.jpg?height=640&width=640&fit=bounds',
                 'description' => 'Lorem Ipsum'
             ],
 
             [
                 'title'=> 'ToBoolist',
-                'thumb'=> 'https://imageio.forbes.com/blogs-images/forbestechcouncil/files/2019/01/canva-photo-editor-8-7.jpg?height=640&width=640&fit=bounds',
                 'description' => 'Lorem Ipsum'
             ],
             [
                 'title'=> 'BoolPress',
-                'thumb'=> 'https://imageio.forbes.com/blogs-images/forbestechcouncil/files/2019/01/canva-photo-editor-8-7.jpg?height=640&width=640&fit=bounds',
                 'description' => 'Lorem Ipsum'
             ],
             [
                 'title'=> 'Campo Boolfiorito',
-                'thumb'=> 'https://imageio.forbes.com/blogs-images/forbestechcouncil/files/2019/01/canva-photo-editor-8-7.jpg?height=640&width=640&fit=bounds',
                 'description' => 'Lorem Ipsum'
             ],
             [
                 'title'=> 'Midterm Project',
-                'thumb'=> 'https://imageio.forbes.com/blogs-images/forbestechcouncil/files/2019/01/canva-photo-editor-8-7.jpg?height=640&width=640&fit=bounds',
                 'description' => 'Lorem Ipsum'
             ],
             [
                 'title'=> 'Laravel Auth',
-                'thumb'=> 'https://imageio.forbes.com/blogs-images/forbestechcouncil/files/2019/01/canva-photo-editor-8-7.jpg?height=640&width=640&fit=bounds',
                 'description' => 'Lorem Ipsum'
             ]
         ];
@@ -65,10 +58,10 @@ class ProjectSeeder extends Seeder
         foreach($projects as $project){
             $newProject = new Project(); 
             $newProject->title = $project['title'];
-            $newProject->thumb = $project['thumb'];
             $newProject->description = $project['description'];
             $newProject->slug = Str::slug($project['title']);
             $newProject->type_id= $ids->random();
+
             
             $newProject->save();
 

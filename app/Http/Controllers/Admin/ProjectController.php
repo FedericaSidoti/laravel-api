@@ -9,6 +9,7 @@ use App\Models\Technology;
 use Illuminate\Validation\Rule;
 use App\Models\Type;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class ProjectController extends Controller
 {
@@ -36,13 +37,16 @@ class ProjectController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
+        $img_path = Storage::put('img', $request->cover_image);
+
+        $data['cover_image']= $img_path;
 
         $data['slug'] = Str::slug($data['title'], '-');
 
         $request->validate([
             'title' => 'required|max:255|',
-            'thumb' => 'required|url',
             'description' => 'required',
+            'cover_image' => 'nullable',
             'type_id' => 'nullable|exists:types,id',
             'technology_id' => 'nullable|exists:technologies,id',
         ]);
@@ -73,8 +77,8 @@ class ProjectController extends Controller
 
         $request->validate([
             'title' => 'required|max:255|',
-            'thumb' => 'required|url',
             'description' => 'required',
+            'cover_image' => 'nullable',
             'type_id' => 'nullable|exists:types,id',
             'technology_id' => 'nullable|exists:technologies,id',
         ]);

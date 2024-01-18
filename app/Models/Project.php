@@ -11,7 +11,7 @@ class Project extends Model
 
     protected $fillable = [
         "title",
-        "thumb",
+        "cover_image",
         "description",
         "type_id", 
         "slug"
