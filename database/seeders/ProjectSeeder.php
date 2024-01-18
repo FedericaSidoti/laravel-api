@@ -33,6 +33,26 @@ class ProjectSeeder extends Seeder
                 'title'=> 'ToBoolist',
                 'thumb'=> 'https://imageio.forbes.com/blogs-images/forbestechcouncil/files/2019/01/canva-photo-editor-8-7.jpg?height=640&width=640&fit=bounds',
                 'description' => 'Lorem Ipsum'
+            ],
+            [
+                'title'=> 'BoolPress',
+                'thumb'=> 'https://imageio.forbes.com/blogs-images/forbestechcouncil/files/2019/01/canva-photo-editor-8-7.jpg?height=640&width=640&fit=bounds',
+                'description' => 'Lorem Ipsum'
+            ],
+            [
+                'title'=> 'Campo Boolfiorito',
+                'thumb'=> 'https://imageio.forbes.com/blogs-images/forbestechcouncil/files/2019/01/canva-photo-editor-8-7.jpg?height=640&width=640&fit=bounds',
+                'description' => 'Lorem Ipsum'
+            ],
+            [
+                'title'=> 'Midterm Project',
+                'thumb'=> 'https://imageio.forbes.com/blogs-images/forbestechcouncil/files/2019/01/canva-photo-editor-8-7.jpg?height=640&width=640&fit=bounds',
+                'description' => 'Lorem Ipsum'
+            ],
+            [
+                'title'=> 'Laravel Auth',
+                'thumb'=> 'https://imageio.forbes.com/blogs-images/forbestechcouncil/files/2019/01/canva-photo-editor-8-7.jpg?height=640&width=640&fit=bounds',
+                'description' => 'Lorem Ipsum'
             ]
         ];
 

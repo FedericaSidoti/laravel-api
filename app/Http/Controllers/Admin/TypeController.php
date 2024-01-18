@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Type;
 use App\Http\Requests\StoreTypeRequest;
 use App\Http\Requests\UpdateTypeRequest;
+use Illuminate\Support\Str;
 
 class TypeController extends Controller
 {
@@ -33,6 +34,8 @@ class TypeController extends Controller
     public function store(StoreTypeRequest $request)
     {
         $data = $request->all();
+
+        $data['slug'] = Str::slug($data['name'], '-');
 
         $request->validate([
             'name' => 'required|max:255|',
@@ -66,6 +69,8 @@ class TypeController extends Controller
     public function update(UpdateTypeRequest $request, Type $type)
     {
         $data = $request->all();
+
+        $data['slug'] = Str::slug($data['name'], '-');
 
         $request->validate([
             'name' => 'required|max:255|',
